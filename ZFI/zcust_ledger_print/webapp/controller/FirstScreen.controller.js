@@ -13,7 +13,7 @@ sap.ui.define([
 
     return Controller.extend("zcustledgerprint.controller.FirstScreen", {
         onInit() {
-            var fnValidator2 = function (args) {
+            var fnValidator2 = function (args) { 
                 var text = args.text;
                 return new Token({ key: text, text: text });
             };
