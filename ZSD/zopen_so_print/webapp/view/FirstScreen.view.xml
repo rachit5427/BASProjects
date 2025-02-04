@@ -1,0 +1,89 @@
+<mvc:View controllerName="zopensoprint.controller.FirstScreen"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m" xmlns:F="sap.ui.layout.form" xmlns:C="sap.ui.core" xmlns:l="sap.ui.layout">
+    <Page titleAlignment="Center" id="page" title="{i18n>title}">
+        <content>
+        
+            <F:SimpleForm id="idFirstSimpleForm" layout="ResponsiveGridLayout" columnsL="2" columnsXL="2" columnsM="2" editable="true">
+                <F:content>
+                    <Label design="Bold" id="idSalesOrderNoLabel" text="Sales Order No" />
+                    <Input showValueHelp="true" valueHelpRequest="onSalesOrderValueHelpRequest" id="idFromSalesOrderNoInput" />
+                    <Input showValueHelp="true" valueHelpRequest="onSalesOrderValueHelpRequest" id="idToSalesOrderNoInput" />
+                    <Label design="Bold" id="idSalesOfficeLabel" text="Sales Office" />
+                    <ComboBox id="idSalesOfficeComboBox" items="{/SalesOffice_F4}" showSecondaryValues="true">
+                        <C:ListItem id="idSalesOfficeListItem" key="{SalesOffice}" text="{SalesOffice}" additionalText="{SalesOfficeName}"/>
+                    </ComboBox>
+                    <Label design="Bold" id="idStorageLocationLabel" text="Storage Location" />
+                    <ComboBox id="idStorageLocationComboBox" items="{/StorageLocation_F4}" showSecondaryValues="true">
+                        <C:ListItem id="idStorageLocationListItem" key="{StorageLocation}{Plant}" text="{StorageLocation}" additionalText="{StorageLocationName}"/>
+                    </ComboBox>
+                    <Label design="Bold" id="idDivisionLabel" text="Division" />
+                    <ComboBox id="idDivisionComboBox" items="{/Division_F4}" showSecondaryValues="true">
+                        <C:ListItem id="idDivisionListItem" key="{Division}" text="{Division}" additionalText="{DivisionName}" />
+                    </ComboBox>
+                    <Label design="Bold" id="idSalesDocumentTypeLabel" text="Sales Document Type" />
+                    <ComboBox id="idSalesDocumentTypeComboBox" items="{/SalesDocumentType_F4}" showSecondaryValues="true">
+                        <C:ListItem id="idSalesDocumentTypeListItem" key="{SalesDocumentType}" text="{SalesDocumentType}" additionalText="{SalesDocumentTypeName}" />
+                    </ComboBox>
+                    <Label design="Bold" id="idDateLabel" text="Date" />
+                    <DatePicker valueFormat="yyyy-MM-dd" displayFormat="dd-MM-yyyy" id="idFromDate"/>
+                    <DatePicker valueFormat="yyyy-MM-dd" displayFormat="dd-MM-yyyy" id="idToDate"/>
+                    <Label design="Bold" id="idCustomerLabel" text="Customer" />
+                    <MultiInput showValueHelp="true" valueHelpRequest="onCustomerCodeValueHelpRequest" id="idCustomerCodeInput"></MultiInput>
+                    <Label design="Bold" id="idHasteLabel" text="Haste" />
+                    <MultiInput showValueHelp="true" valueHelpRequest="onHasteCodeValueHelpRequest" id="idHasteCodeInput"></MultiInput>
+                    <Label design="Bold" id="idSalesManLabel" text="SalesMan" />
+                    <MultiInput showValueHelp="true" valueHelpRequest="onSalesManCodeValueHelpRequest" id="idSalesManCodeInput"></MultiInput>
+                    <Label design="Bold" id="idCatalogueLabel" text="Catalogue" />
+                    <MultiInput showValueHelp="true" valueHelpRequest="onCatalogueCodeValueHelpRequest" id="idCatalogueCodeInput"></MultiInput>
+                    <Label design="Bold" id="idDesignLabel" text="Design" />
+                    <MultiInput showValueHelp="true" valueHelpRequest="onDesignCodeValueHelpRequest" id="idDesignCodeInput"></MultiInput>
+                    <C:Title id="id1Title"/>
+                </F:content>
+            </F:SimpleForm>
+
+            <SelectDialog contentWidth="50%" contentHeight="50%" id="idOrderNumberSelectDialog" noDataText="No Order Number Found" title="Select Order Number Code" 
+               search=".onOrderNumberSelectDialogSearch" confirm=".onOrderNumberSelectDialogConfirm" cancel=".onOrderNumberSelectDialogConfirm" items="{path: '/OrderNumberF4'}">
+                <StandardListItem id="idOrderNumberStandardListItem" title="{SalesOrder}" info="{SalesOrderItem}" type="Active" /> 
+            </SelectDialog>
+            
+            <SelectDialog multiSelect="true" contentWidth="50%" contentHeight="50%" id="idCustomerCodeSelectDialog" noDataText="No Customer Code Found" title="Select Customer Code" 
+               search=".onCustomerCodeSelectDialogSearch" confirm=".onCustomerCodeSelectDialogConfirm" cancel=".onCustomerCodeSelectDialogConfirm" items="{path: '/Customer_F4',filters:[{path:'CustomerAccountGroup', operator:'EQ', value1:'ZDOM'}]  }">
+                <StandardListItem id="idCustomerCodeStandardListItem" title="{Customer}" info="{CustomerName}" type="Active" /> 
+            </SelectDialog>
+
+            <SelectDialog multiSelect="true" contentWidth="50%" contentHeight="50%" id="idHasteCodeSelectDialog" noDataText="No Haste Code Found" title="Select Haste Code" 
+               search=".onHasteCodeSelectDialogSearch" confirm=".onHasteCodeSelectDialogConfirm" cancel=".onHasteCodeSelectDialogConfirm" items="{path: '/Customer_F4',filters:[{path:'CustomerAccountGroup', operator:'EQ', value1:'ZDOM'}]  }">
+                <StandardListItem id="idHasteCodeStandardListItem" title="{Customer}" info="{CustomerName}" type="Active" /> 
+            </SelectDialog>
+
+            <SelectDialog multiSelect="true" contentWidth="50%" contentHeight="50%" id="idSalesManCodeSelectDialog" noDataText="No Sales Man Code Found" title="Select Sales Man Code" 
+               search=".onSalesManCodeSelectDialogSearch" confirm=".onSalesManCodeSelectDialogConfirm" cancel=".onSalesManCodeSelectDialogConfirm" items="{path: '/Supplier_F4',filters:[{path:'SupplierAccountGroup', operator:'EQ', value1:'ZEMV'}] }">
+                <StandardListItem id="idSalesManCodeStandardListItem" title="{Supplier}" info="{SupplierName}" type="Active" /> 
+            </SelectDialog>
+
+            <SelectDialog multiSelect="true" contentWidth="50%" contentHeight="50%" id="idCatalogueCodeSelectDialog" noDataText="No Catalogue Code Found" title="Select Catalogue Code" 
+               search=".onCatalogueCodeSelectDialogSearch" confirm=".onCatalogueCodeSelectDialogConfirm" cancel=".onCatalogueCodeSelectDialogConfirm" items="{path: '/ProductF4', filters:[{ path: 'ProductType', operator: 'EQ', value1: 'ZCSF' },{ path: 'ProductType', operator: 'EQ', value1: 'ZCSR' },{ path: 'ProductType', operator: 'EQ', value1: 'ZCGF' },{ path: 'ProductType', operator: 'EQ', value1: 'ZCGR' }] }">
+                <StandardListItem id="idCatalogueCodeStandardListItem" title="{Product}" info="{ProductDescription}" type="Active" /> 
+            </SelectDialog>
+
+            <SelectDialog multiSelect="true" contentWidth="50%" contentHeight="50%" id="idDesignCodeSelectDialog" noDataText="No Design Code Found" title="Select Design Code" 
+               search=".onDesignCodeSelectDialogSearch" confirm=".onDesignCodeSelectDialogConfirm" cancel=".onDesignCodeSelectDialogConfirm" items="{path: '/ProductF4',filters: [{ path: 'ProductType', operator: 'EQ', value1: 'ZFGF' },{ path: 'ProductType', operator: 'EQ', value1: 'ZFSF' }] }">
+                <StandardListItem id="idDesignCodeStandardListItem" title="{Product}" info="{ProductDescription}" type="Active" /> 
+            </SelectDialog>
+
+            <SelectDialog multiSelect="true" contentWidth="50%" contentHeight="50%" id="idSalesOrderSelectDialog" noDataText="No Sales Order Found" title="Select Sales Order" 
+               search=".onSalesOrderSelectDialogSearch" confirm=".onSalesOrderSelectDialogConfirm" cancel=".onSalesOrderSelectDialogConfirm" items="{path: '/OrderNumberF4'}">
+                <StandardListItem id="idSalesOrderStandardListItem" title="{SalesOrder}" info="{SalesOrderItem}" type="Active" /> 
+            </SelectDialog>
+
+        </content>
+        <footer>
+            <Bar id="idBar">
+                <contentRight>
+                    <Button id="idExecuteButton" text="Execute" type="Emphasized" press="onExecuteButtonPress1" ></Button>
+                </contentRight>
+            </Bar>
+        </footer>
+    </Page>
+</mvc:View>

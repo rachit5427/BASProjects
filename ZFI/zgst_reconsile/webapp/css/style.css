@@ -1,0 +1,29 @@
+/* Enter your custom styles here */
+
+.sapUiSizeCompact .sapMPageHeader .sapMIBar .sapMBarLeft, .sapUiSizeCompact .sapMPageFooter .sapMIBar .sapMBarLeft, .sapUiSizeCompact .sapMPageHeader .sapMIBar .sapMBarRight, .sapUiSizeCompact .sapMPageFooter .sapMIBar .sapMBarRight, .sapUiSizeCompact .sapMPageHeader .sapMIBar .sapMBarPH, .sapUiSizeCompact .sapMPageFooter .sapMIBar .sapMBarPH {
+    height: 2.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    justify-content: center;
+}
+
+.Set_Pading {
+    padding-right: 20px;
+}
+.myBackgroundStyle {
+
+    object-fit: contain; /* Ensure the image is fully visible */
+    background-size: contain; /* Scale the image to fit within the panel */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center; /* Center the image in the panel */
+    background-image: url('../css/White_BG.png');
+}
+
+.sapUiForm .sapUiFormTitle {
+    border-width: 1px;
+    border-color: #a8b3bd;
+    font-family: "72-Bold", "72-Boldfull", "72", "72full", Arial, Helvetica, sans-serif;
+    height: 2.75rem;
+    line-height: 2.75rem;
+    opacity: -1;
+}

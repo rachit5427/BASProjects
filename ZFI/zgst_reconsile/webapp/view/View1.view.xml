@@ -1,0 +1,91 @@
+<mvc:View controllerName="zgstreconsile.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form">
+    <Page id="page" title="{i18n>title}" class="changetitle">
+       <content>
+			<Panel
+				backgroundDesign="Transparent"
+				id="Panel1"
+				 class="myBackgroundStyle"  
+			>
+				<content>
+					<f:SimpleForm  editable="true" emptySpanL="8" emptySpanXL="7" emptySpanM="7" layout="ResponsiveGridLayout" class="FontColorChange" backgroundDesign="Transparent">
+						<f:content>
+							<Label text="Company Code" required="true" design="Bold"/>
+                            <ComboBox id="idCode">
+								<items>
+									<core:ListItem
+										text="1000"
+										key="1000"
+									/>
+									
+								</items>
+							</ComboBox>
+                            
+                        <Label text="From Date" design="Bold"/>
+						<DatePicker valueFormat="yyyy-MM-dd" displayFormat="dd-MM-yyyy" editable="true"  id="From"  />
+                        <Label text="To Date" design="Bold"/>
+
+						<DatePicker valueFormat="yyyy-MM-dd" displayFormat="dd-MM-yyyy" editable="true"  id="To"  />
+						
+						
+						
+						
+						
+							
+							 <Label text="GST No" design="Bold"/>
+							
+
+								  <ComboBox id="Orderfr">
+								<items>
+									<core:ListItem
+										text="24AAGCS7626F1ZC"
+										key="1"
+									/>
+									
+								</items>
+							</ComboBox>
+					</f:content>
+					</f:SimpleForm>
+					<f:SimpleForm 
+						title="Select Action"
+						class="FontColorChange"
+						editable="true"
+						layout="ResponsiveGridLayout"
+						backgroundDesign="Transparent"
+					>
+						<f:content>
+							<VBox >
+								<items>
+									<RadioButtonGroup
+										select="onChangeAction"
+										id="idActionRadioBtnGroup"
+									>
+										<buttons>
+											<RadioButton text="Sales" />
+											<RadioButton text="Purchase" />
+										</buttons>
+									</RadioButtonGroup>
+								</items>
+							</VBox>
+						</f:content>
+					</f:SimpleForm>
+				</content>
+			</Panel>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button
+						icon="sap-icon://open-command-field"
+						press="Next"
+						type="Emphasized"
+						text="Next"
+					/>
+				</contentRight>
+			</Bar>
+		</footer>
+    </Page>
+</mvc:View>

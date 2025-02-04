@@ -1,0 +1,134 @@
+{
+    "_version": "1.65.0",
+    "sap.app": {
+        "id": "zcustledgerprint",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:basic",
+            "version": "1.16.2",
+            "toolsId": "aa51d303-4580-4563-9c33-72256168d056"
+        },
+        "crossNavigation": {
+            "inbounds": {
+                "ZCUST_LEDGER_P-Display": {
+                    "semanticObject": "ZCUST_LEDGER_P",
+                    "action": "Display",
+                    "title": "{{flpTitle}}",
+                    "subTitle": "{{flpSubtitle}}",
+                    "signature": {
+                        "parameters": {},
+                        "additionalParameters": "allowed"
+                    }
+                }
+            }
+        },
+        "dataSources": {
+            "ZCUST_LEDGER_PRINT": {
+                "uri": "/sap/opu/odata/sap/ZCUST_LEDGER_PRINT",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": true,
+        "dependencies": {
+            "minUI5Version": "1.132.0",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "zcustledgerprint.i18n.i18n"
+                }
+            },
+            "": {
+                "preload": true,
+                "dataSource": "ZCUST_LEDGER_PRINT",
+                "settings": {
+                    "defaultBindingMode": "TwoWay",
+                    "defaultCountMode": "Inline",
+                    "refreshAfterChange": false,
+                    "metadataUrlParams": {
+                        "sap-value-list": "none"
+                    }
+                }
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "transition": "slide",
+                "type": "View",
+                "viewType": "XML",
+                "path": "zcustledgerprint.view",
+                "async": true,
+                "viewPath": "zcustledgerprint.view"
+            },
+            "routes": [
+                {
+                    "name": "RouteFirstScreen",
+                    "pattern": ":?query:",
+                    "target": [
+                        "TargetFirstScreen"
+                    ]
+                }
+            ],
+            "targets": {
+                "TargetFirstScreen": {
+                    "id": "FirstScreen",
+                    "name": "FirstScreen"
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "zcustledgerprint.view.App",
+            "type": "XML",
+            "id": "App"
+        }
+    }
+}

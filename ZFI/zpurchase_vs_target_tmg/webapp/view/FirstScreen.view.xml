@@ -1,0 +1,56 @@
+<mvc:View controllerName="zpurchasevstargettmg.controller.FirstScreen"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m" xmlns:F="sap.ui.layout.form" xmlns:C="sap.ui.core" xmlns:Tab="sap.ui.table" >
+    <Page id="idPage" titleAlignment="Center" title="{i18n>title}">
+       <content>
+
+            <Tab:Table  class="sapUiSmallMargin" visibleRowCountMode="Auto" id="idTable" rows="{oDataModel>/aTableData}" >
+                <Tab:noData>
+                    <IllustratedMessage id="idTableIllustratedMessage" title="No Data Found!!"  enableFormattedText="true" description="Add data to the table using the Add button above" />
+                </Tab:noData>
+                <Tab:extension>
+                    <OverflowToolbar id="idTableOverflowToolbar" style="Clear">
+                        <Title text="Items ({= ${oDataModel>/aTableData}.length})" level="H2" />
+                        <ToolbarSpacer id="idTableToolbarSpacer" />
+                        <Button id="idTableAddButton" type="Emphasized" icon="sap-icon://add" 
+                        tooltip="Add Table Data" text="Add" press="onAddButtonPress"/>
+                        <Button id="idTableDeleteButton" type="Emphasized" icon="sap-icon://delete" 
+                        tooltip="Delete Table Data" text="Delete" press="onDeleteButtonPress"/>
+                        <Button id="idTableSaveButton" type="Emphasized" icon="sap-icon://save" 
+                        tooltip="Save Table Data" text="Save" press="onSaveButtonPress"/>
+                    </OverflowToolbar>
+                </Tab:extension>
+                <Tab:columns>
+                    <Tab:Column sortProperty="GLCode" filterProperty="GLCode" id="idTablesGLCodeColumn"  >
+                        <Label id="idTablesGLCodeLabel" text="GLCode" />
+                        <Tab:template>
+                            <Input id="idTablesGLCodeInput" showValueHelp="true" valueHelpRequest="onGLCodeValueHelpRequest" editable="{oDataModel>keyFieldEditable}" value="{oDataModel>GLCode}"/>
+                        </Tab:template>
+                    </Tab:Column>
+                    <Tab:Column sortProperty="GLDescription" filterProperty="GLDescription" id="idTablesGLDescriptionColumn"  >
+                        <Label id="idTablesGLDescriptionLabel" text="GLDescription" />
+                        <Tab:template>
+                            <Text id="idTablesGLDescriptionInput"  text="{oDataModel>GLDescription}"/>
+                        </Tab:template>
+                    </Tab:Column>
+                    <Tab:Column sortProperty="FiscalYear" filterProperty="FiscalYear" id="idTablesColumn"  >
+                        <Label id="idTablesFiscalYearLabel" text="Fiscal Year" />
+                        <Tab:template>
+                            <Text id="idTablesFiscalYearInput"  text="{oDataModel>FiscalYear}"/>
+                        </Tab:template>
+                    </Tab:Column>
+                    <Tab:Column sortProperty="StandardPercentage" filterProperty="StandardPercentage" id="idTablesStandardPercentageColumn"  >
+                        <Label id="idTablesStandardPercentageLabel" text="Standard Percentage" />
+                        <Tab:template>
+                            <Input id="idTablesStandardPercentageInput" liveChange="onStandardPercentageLiveChange" value="{oDataModel>StandardPercentage}"/>
+                        </Tab:template>
+                    </Tab:Column>
+                </Tab:columns>
+            </Tab:Table>
+
+            <SelectDialog contentWidth="50%" contentHeight="50%" id="idSelectDialog" noDataText="No GL Account Found" title="Select GL Account" search=".onDialogSearch" confirm=".onDialogClose" cancel=".onDialogClose" items="{ path: '/GLAccountF4'}">
+                <StandardListItem title="{GLAccount}" info="{GLAccountName}" type="Active" />
+            </SelectDialog>
+       </content>
+    </Page>
+</mvc:View>

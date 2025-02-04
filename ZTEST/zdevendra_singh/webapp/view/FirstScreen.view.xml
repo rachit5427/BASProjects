@@ -1,0 +1,306 @@
+<mvc:View controllerName="zdevendrasingh.controller.FirstScreen"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:objPage="sap.uxap" xmlns:F="sap.ui.layout.form" xmlns:C="sap.ui.core" xmlns:l="sap.ui.layout"
+		   xmlns:layout="sap.ui.layout" xmlns:coreIcon="sap.ui.core"
+		   xmlns="sap.m">
+    <objPage:ObjectPageLayout id="ObjectPageLayout"
+		enableLazyLoading="true"
+		beforeNavigate="onBeforeNavigate"
+		useIconTabBar="true"
+		showTitleInHeaderContent="true"
+		upperCaseAnchorBar="false">
+		<objPage:headerTitle>
+			<objPage:ObjectPageDynamicHeaderTitle id="idObjectPageDynamicHeaderTitle">
+				<objPage:expandedHeading>
+					<Title id="id1Title" text="Devendra Singh" wrapping="true"/>
+				</objPage:expandedHeading>
+
+				<objPage:snappedHeading>
+					<FlexBox id="idsnappedHeadingsFlexBox" fitContainer="true" alignItems="Center">
+						<Avatar id="id1Avatar" class="sapUiTinyMarginEnd"/>
+						<Title id="idTitle" text="Devendra Singh" wrapping="true" />
+					</FlexBox>
+				</objPage:snappedHeading>
+
+				<objPage:expandedContent>
+					<Text id="idexpandedContentsText" text="Sap UI5/FIORI Developer"/>
+				</objPage:expandedContent>
+
+				<objPage:snappedContent>
+					<Text id="idsnappedContentsText" text="Sap UI5/FIORI Developer"/>
+				</objPage:snappedContent>
+
+				<objPage:snappedTitleOnMobile>
+					<Title id="idsnappedTitleOnMobilesText" text="Sap UI5/FIORI Developer"/>
+				</objPage:snappedTitleOnMobile>
+
+				<objPage:actions>
+					<Button id="idDownloadButton" text="Download" type="Emphasized" press="onDownloadButtonPress"/>
+				</objPage:actions>
+			</objPage:ObjectPageDynamicHeaderTitle>
+		</objPage:headerTitle>
+
+		<objPage:headerContent>
+			<FlexBox id="idheaderContentsFlexBox" wrap="Wrap" fitContainer="true">
+				<Avatar id="id2Avatar" class="sapUiSmallMarginEnd" displaySize="L" />
+				<layout:VerticalLayout id="id1VerticalLayout" class="sapUiSmallMarginBeginEnd">
+                    <layout:HorizontalLayout id="id1HorizontalLayout" >
+                        <Label id="idSkillsLabel" text="Skills :"/>
+                        <Text  id="idSkillsText" text="SAP UI5/FIORI, BTP"/>
+                    </layout:HorizontalLayout>
+                    <layout:HorizontalLayout id="id2HorizontalLayout" >
+                        <Label id="idWorkingLabel" text="Working :"/><Text id="idWorkingText" text="Novel Veritas"/>
+                    </layout:HorizontalLayout>
+                    <layout:HorizontalLayout id="id3HorizontalLayout" >
+                        <Label id="idLanguageLabel" text="Language :"/><Text id="idLanguageText" text="Hindi,English"/>
+                    </layout:HorizontalLayout>
+                    <layout:HorizontalLayout id="id4HorizontalLayout" >
+                        <Label id="idMobileNoLabel" text="Mobile No :"/><Text id="idMobileNoText" text="+91 7878549565"/>
+                    </layout:HorizontalLayout>
+				</layout:VerticalLayout>
+
+				<layout:VerticalLayout id="id2VerticalLayout" class="sapUiSmallMarginBeginEnd">
+					<layout:HorizontalLayout id="id5HorizontalLayout" >
+                        <Label id="idExperienceLabel" text="Experience :"/><Text id="idExperienceText" text="2 Years +"/>
+                    </layout:HorizontalLayout>
+                    <layout:HorizontalLayout id="id6HorizontalLayout" >
+                        <Label id="idQualificationsLabel" text="Qualifications :"/><Text id="idQualificationsText" text="Bachelor of Computer Applications"/>
+                    </layout:HorizontalLayout>
+                    <layout:HorizontalLayout id="id7HorizontalLayout" >
+                        <Label id="idEmailLabel" text="Email :"/><Text id="idEmailText" text="devendrasingh.r@novelveritas.com"/>
+                        <!-- <Label id="idLabel" text="Email :"/><Text id="idText" text=""/> -->
+                    </layout:HorizontalLayout>
+				</layout:VerticalLayout>
+			</FlexBox>
+		</objPage:headerContent>
+		<objPage:sections>
+			<objPage:ObjectPageSection titleUppercase="false" id="idObjectiveObjectPageSection" title="Objective">
+                <objPage:subSections>
+                    <objPage:ObjectPageSubSection id="idObjectiveObjectPageSubSection" titleUppercase="false">
+                        <Text id="idObjectiveText" text="To be associated with a progressive organization that gives scope to update my knowledge, skills, and relationships. To improve efficiency and effectiveness with use of my SAP UI5/FIORI skills for organization as well as personal growth."/>    
+                    </objPage:ObjectPageSubSection>
+                </objPage:subSections>
+			</objPage:ObjectPageSection>
+			<objPage:ObjectPageSection titleUppercase="false" id="idProfessionalSummaryObjectPageSection" title="Professional Summary">
+                <objPage:subSections>
+                    <objPage:ObjectPageSubSection id="idProfessionalSummaryObjectPageSubSection" titleUppercase="false">
+                        <Text id="idProfessionalSummaryText" text="Currently working as, a SAP UI5/FIORI consultant at Novel Veritas Private Limited and worked on 3 End to End Implementation and 2 Support projects."/>    
+                    </objPage:ObjectPageSubSection>
+                </objPage:subSections>
+			</objPage:ObjectPageSection>
+			<objPage:ObjectPageSection titleUppercase="false" id="idSAP_UI5_FIORIObjectPageSection" title="SAP UI5/FIORI">
+                <objPage:subSections>
+                    <objPage:ObjectPageSubSection id="idSAP_UI5_FIORIObjectPageSubSection" titleUppercase="false">
+                        <layout:VerticalLayout id="id3VerticalLayout" class="sapUiSmallMarginBeginEnd">
+                            <layout:HorizontalLayout id="id8HorizontalLayout" >
+                                <!-- <Text id="id1Text"  text="*"/> -->
+                                <coreIcon:Icon id="id1Icon" class="sapUiSmallMarginEnd" src="sap-icon://chevron-phase-2" color="#031E48" ></coreIcon:Icon>
+                                <Text id="id2Text"  text="Over 2 years of experience in SAP UI5/FIORI Module."/>
+                            </layout:HorizontalLayout>
+                            <layout:HorizontalLayout id="id9HorizontalLayout" >
+                                <!-- <Text id="id3Text"  text="*"/> -->
+                                <coreIcon:Icon id="id2Icon" class="sapUiSmallMarginEnd" src="sap-icon://chevron-phase-2" color="#031E48" ></coreIcon:Icon>
+                                <Text id="id4Text"  text="Working with OData v2 and v4 for CRUD operations, batch processing, and validations."/>
+                            </layout:HorizontalLayout>
+                            <layout:HorizontalLayout id="id10HorizontalLayout" >
+                                <!-- <Text id="id5Text"  text="*"/> -->
+                                <coreIcon:Icon id="id3Icon" class="sapUiSmallMarginEnd" src="sap-icon://chevron-phase-2" color="#031E48" ></coreIcon:Icon>
+                                <Text id="id6Text"  text="Experienced in building side-by-side extension and deploying apps using SAP BTP following RAP (RESTful ABAP Programming) based programming methodology."/>
+                            </layout:HorizontalLayout>
+                            <layout:HorizontalLayout id="id11HorizontalLayout" >
+                                <!-- <Text id="id7Text"  text="*"/> -->
+                                <coreIcon:Icon id="id4Icon" class="sapUiSmallMarginEnd" src="sap-icon://chevron-phase-2" color="#031E48" ></coreIcon:Icon>
+                                <Text id="id8Text"  text="Familiarity with SAP BTP tools including SAP Cloud Connector for on-premises connectivity and SAP HANA Studio for database development."/>
+                            </layout:HorizontalLayout>
+                            <layout:HorizontalLayout id="id12HorizontalLayout" >
+                                <!-- <Text id="id9Text"  text="*"/> -->
+                                <coreIcon:Icon id="id5Icon" class="sapUiSmallMarginEnd" src="sap-icon://chevron-phase-2" color="#031E48" ></coreIcon:Icon>
+                                <Text id="id10Text" text="Experience in the areas of SAP UI5, Fiori, JavaScript development"/>
+                            </layout:HorizontalLayout>
+                            <layout:HorizontalLayout id="id13HorizontalLayout" >
+                                <!-- <Text id="id11Text" text="*"/> -->
+                                <coreIcon:Icon id="id6Icon" class="sapUiSmallMarginEnd" src="sap-icon://chevron-phase-2" color="#031E48" ></coreIcon:Icon>
+                                <Text id="id12Text" text="Knowledge in SAP UI5, HTML5, CSS, JavaScript, JQuery."/>
+                            </layout:HorizontalLayout>
+                            <layout:HorizontalLayout id="id14HorizontalLayout" >
+                                <!-- <Text id="id13Text" text="*"/> -->
+                                <coreIcon:Icon id="id7Icon" class="sapUiSmallMarginEnd" src="sap-icon://chevron-phase-2" color="#031E48" ></coreIcon:Icon>
+                                <Text id="id14Text" text="Understanding of Fiori extensibility, customizations, activations."/>
+                            </layout:HorizontalLayout>
+                            <layout:HorizontalLayout id="id15HorizontalLayout" >
+                                <!-- <Text id="id15Text" text="*"/> -->
+                                <coreIcon:Icon id="id8Icon" class="sapUiSmallMarginEnd" src="sap-icon://chevron-phase-2" color="#031E48" ></coreIcon:Icon>
+                                <Text id="id16Text" text="Hands on experience in tools such as BAS, Web ide."/>
+                            </layout:HorizontalLayout>
+                            <layout:HorizontalLayout id="id16HorizontalLayout" >
+                                <!-- <Text id="id17Text" text="*"/> -->
+                                <coreIcon:Icon id="id9Icon" class="sapUiSmallMarginEnd" src="sap-icon://chevron-phase-2" color="#031E48" ></coreIcon:Icon>
+                                <Text id="id18Text" text="Involved in design and development in the frontend UI5 and ABAP backend (Creation, OData service maintenance)."/>
+                            </layout:HorizontalLayout>
+                            <layout:HorizontalLayout id="id17HorizontalLayout" >
+                                <!-- <Text id="id19Text" text="*"/> -->
+                                <coreIcon:Icon id="id10Icon" class="sapUiSmallMarginEnd" src="sap-icon://chevron-phase-2" color="#031E48" ></coreIcon:Icon>
+                                <Text id="id20Text" text="Experience in designing of Fiori apps in wireframe before development"/>
+                            </layout:HorizontalLayout>
+                            <layout:HorizontalLayout id="id18HorizontalLayout" >
+                                <!-- <Text id="id21Text" text="*"/> -->
+                                <coreIcon:Icon id="id11Icon" class="sapUiSmallMarginEnd" src="sap-icon://chevron-phase-2" color="#031E48" ></coreIcon:Icon>
+                                <Text id="id22Text" text="Experience in Software design, UX, UI Design and Application Development and Maintenance,"/>
+                            </layout:HorizontalLayout>
+                            <layout:HorizontalLayout id="id19HorizontalLayout" >                                
+                                <coreIcon:Icon id="id12Icon" class="sapUiSmallMarginEnd" src="sap-icon://chevron-phase-2" color="#031E48" ></coreIcon:Icon>
+                                <Text id="id24Text" text="Developing, debugging, and fixing errors in both OData and Fiori part."/>
+                            </layout:HorizontalLayout>                            
+                            <layout:HorizontalLayout id="id20HorizontalLayout" >                                
+                                <coreIcon:Icon id="id13Icon" class="sapUiSmallMarginEnd" src="sap-icon://chevron-phase-2" color="#031E48" ></coreIcon:Icon>
+                                <Text id="id25Text" text="Experienced in working with OData services."/>
+                            </layout:HorizontalLayout>                            
+                            <layout:HorizontalLayout id="id21HorizontalLayout" >                                
+                                <coreIcon:Icon id="id14Icon" class="sapUiSmallMarginEnd" src="sap-icon://chevron-phase-2" color="#031E48" ></coreIcon:Icon>
+                                <Text id="id26Text" text="Worked on displaying user interface as per client requirement using UI guidelines and standards."/>
+                            </layout:HorizontalLayout>                            
+                            <layout:HorizontalLayout id="id22HorizontalLayout" >                                
+                                <coreIcon:Icon id="id15Icon" class="sapUiSmallMarginEnd" src="sap-icon://chevron-phase-2" color="#031E48" ></coreIcon:Icon>
+                                <Text id="id27Text" text="Technology and architecture knowledge about SAP systems such as S4H, BTP."/>
+                            </layout:HorizontalLayout>                            
+                            <layout:HorizontalLayout id="id23HorizontalLayout" >                                
+                                <coreIcon:Icon id="id16Icon" class="sapUiSmallMarginEnd" src="sap-icon://chevron-phase-2" color="#031E48" ></coreIcon:Icon>
+                                <Text id="id28Text" text="Designing and implementing processes, or process improvements, to aid in development and support"/>
+                            </layout:HorizontalLayout>                            
+                            <layout:HorizontalLayout id="id24HorizontalLayout" >                                
+                                <coreIcon:Icon id="id17Icon" class="sapUiSmallMarginEnd" src="sap-icon://chevron-phase-2" color="#031E48" ></coreIcon:Icon>
+                                <Text id="id29Text" text="Strong analytical and logical skills - the ability to resolve issues in a high-pressure environment."/>
+                            </layout:HorizontalLayout>                            
+                            <layout:HorizontalLayout id="id25HorizontalLayout" >                                
+                                <coreIcon:Icon id="id18Icon" class="sapUiSmallMarginEnd" src="sap-icon://chevron-phase-2" color="#031E48" ></coreIcon:Icon>
+                                <Text id="id30Text" text="Ability to work with a team to provide written responses to technical proposals and /or reports/documentation for delivery."/>
+                            </layout:HorizontalLayout>                            
+                            <layout:HorizontalLayout id="id26HorizontalLayout" >                                
+                                <coreIcon:Icon id="id19Icon" class="sapUiSmallMarginEnd" src="sap-icon://chevron-phase-2" color="#031E48" ></coreIcon:Icon>
+                                <Text id="id31Text" text="Experience in building of CDS views also ODATA and Sap Gateway."/>
+                            </layout:HorizontalLayout>                            
+                            <layout:HorizontalLayout id="id27HorizontalLayout" >                                
+                                <coreIcon:Icon id="id20Icon" class="sapUiSmallMarginEnd" src="sap-icon://chevron-phase-2" color="#031E48" ></coreIcon:Icon>
+                                <Text id="id32Text" text="Experience in building of SAP Fiori Elements,"/>
+                            </layout:HorizontalLayout>                            
+                            <layout:HorizontalLayout id="id28HorizontalLayout" >                                
+                                <coreIcon:Icon id="id21Icon" class="sapUiSmallMarginEnd" src="sap-icon://chevron-phase-2" color="#031E48" ></coreIcon:Icon>
+                                <Text id="id33Text" text="Working with Sap Standard API like (API_SALES_ORDER_SRV, API_OUTBOUND_DELIVERY_SRV, API_MATERIAL_DOCUMENT_SRV, API_BILLING_DOCUMENT_SRV and many more),"/>
+                            </layout:HorizontalLayout>
+
+                        </layout:VerticalLayout>    
+                    </objPage:ObjectPageSubSection>
+                </objPage:subSections>
+			</objPage:ObjectPageSection>
+			<objPage:ObjectPageSection titleUppercase="false" id="idSAPBTPObjectPageSection" title="SAP BTP">
+                <objPage:subSections>
+                    <objPage:ObjectPageSubSection id="idSAPBTPObjectPageSubSection" titleUppercase="false">
+                                                   
+                        <layout:VerticalLayout id="idSAPBTP1VerticalLayout" class="sapUiSmallMarginBeginEnd">
+                            <layout:HorizontalLayout id="idSAPBTP1HorizontalLayout" >                                
+                                <coreIcon:Icon id="idSAPBTP1Icon" class="sapUiSmallMarginEnd" src="sap-icon://chevron-phase-2" color="#031E48" ></coreIcon:Icon>
+                                <Text id="idSAPBTP1Text" text="Designed and implemented custom SAP UI5 and Fiori applications to enhance user productivity, ensuring alignment with business requirements"/>
+                            </layout:HorizontalLayout>   
+                            <layout:HorizontalLayout id="idSAPBTP2HorizontalLayout" >                                
+                                <coreIcon:Icon id="idSAPBTP2Icon" class="sapUiSmallMarginEnd" src="sap-icon://chevron-phase-2" color="#031E48" ></coreIcon:Icon>
+                                <Text id="idSAPBTP2Text" text="Deployed scalable solutions on SAP BTP, integrating S/4HANA systems for seamless operational workflows."/>
+                            </layout:HorizontalLayout>   
+                            <layout:HorizontalLayout id="idSAPBTP3HorizontalLayout" >                                
+                                <coreIcon:Icon id="idSAPBTP3Icon" class="sapUiSmallMarginEnd" src="sap-icon://chevron-phase-2" color="#031E48" ></coreIcon:Icon>
+                                <Text id="idSAPBTP3Text" text="Developed APIs and OData services (v2/v4) for data manipulation and integration across enterprise applications."/>
+                            </layout:HorizontalLayout>   
+                            <layout:HorizontalLayout id="idSAPBTP4HorizontalLayout" >                                
+                                <coreIcon:Icon id="idSAPBTP4Icon" class="sapUiSmallMarginEnd" src="sap-icon://chevron-phase-2" color="#031E48" ></coreIcon:Icon>
+                                <Text id="idSAPBTP4Text" text="Delivered a robust Excel upload/download functionality with custom row formatting for SAP List Reports."/>
+                            </layout:HorizontalLayout>   
+                            <layout:HorizontalLayout id="idSAPBTP5HorizontalLayout" >                                
+                                <coreIcon:Icon id="idSAPBTP5Icon" class="sapUiSmallMarginEnd" src="sap-icon://chevron-phase-2" color="#031E48" ></coreIcon:Icon>
+                                <Text id="idSAPBTP5Text" text="Handled complex routing/navigation between multiple views in SAP UI5 without using UIComponent, simplifying maintenance."/>
+                            </layout:HorizontalLayout>   
+                            <layout:HorizontalLayout id="idSAPBTP6HorizontalLayout" >                                
+                                <coreIcon:Icon id="idSAPBTP6Icon" class="sapUiSmallMarginEnd" src="sap-icon://chevron-phase-2" color="#031E48" ></coreIcon:Icon>
+                                <Text id="idSAPBTP6Text" text="Worked extensively with CDS annotations for ALP and Fiori Elements, enabling real-time insights for business reporting."/>
+                            </layout:HorizontalLayout>   
+                            <layout:HorizontalLayout id="idSAPBTP7HorizontalLayout" >                                
+                                <coreIcon:Icon id="idSAPBTP7Icon" class="sapUiSmallMarginEnd" src="sap-icon://chevron-phase-2" color="#031E48" ></coreIcon:Icon>
+                                <Text id="idSAPBTP7Text" text="Collaborated with cross-functional teams to deliver batch processing workflows for Post Goods Issue (PGI) in logistics."/>
+                            </layout:HorizontalLayout> 
+                        </layout:VerticalLayout>    
+                    </objPage:ObjectPageSubSection>
+                </objPage:subSections>
+			</objPage:ObjectPageSection>
+			<!-- <objPage:ObjectPageSection titleUppercase="false" id="idObjectPageSection" title="">
+                <objPage:subSections>
+                    <objPage:ObjectPageSubSection id="idObjectPageSubSection" titleUppercase="false">
+                        <Text id="idText" text=""/>    
+                    </objPage:ObjectPageSubSection>
+                </objPage:subSections>
+			</objPage:ObjectPageSection> -->
+
+			<objPage:ObjectPageSection titleUppercase="false" id="SAPProfessionalExperience" title="SAP Professional Experience">
+				<objPage:subSections>
+					<objPage:ObjectPageSubSection id="Project5" title="Project 5" titleUppercase="false">
+                        <HBox >
+                            <VBox >
+                            
+                                    <Label textDirection="Inherit" text="Client"/>
+                                    <Label textDirection="Inherit" text="Roll"/>
+                                    <Label textDirection="Inherit" text="Application server"/>
+                                    <Label textDirection="Inherit" text="Project Type"/>
+                                    <Label textDirection="Inherit" text="Company Profile"/>
+                            </VBox>
+                            <VBox >
+                                    <Text  text="Subhash sarees and beyond"/>
+                                    <Text  text="SAP UI5/FIORI Consultant."/>
+                                    <Text  text="SAP S4 HANA Public Cloud"/>
+                                    <Text  text="End to End Implementation (ONSITE)"/>
+                                    <Text  text="Established in 1994, “Subhash Sarees”, is one of the most reputed organizations engaged in manufacturing, supplying, and exporting of wedding sarees, party wear sarees, Bollywood sarees, bridal sarees &amp; movie sarees as well as different types of fabrics like Silk, Georgette, Crepe, Brasso, Chiffon, and other fancy materials."/>
+                            </VBox>
+                        </HBox>
+                            
+                        
+                        
+                        <!-- <F:SimpleForm id="idFirstSimpleForm" layout="ResponsiveGridLayout" columnsL="2" columnsXL="2" columnsM="2" editable="true">
+                            <F:content>
+                                <Label textDirection="Inherit" text="Client"/><Text  text="Subhash sarees and beyond"/>
+                                <Label textDirection="Inherit" text="Roll"/><Text  text="SAP UI5/FIORI Consultant."/>
+                                <Label textDirection="Inherit" text="Application server"/><Text  text="SAP S4 HANA Public Cloud"/>
+                                <Label textDirection="Inherit" text="Project Type"/><Text  text="End to End Implementation (ONSITE)"/>
+                                <Label textDirection="Inherit" text="Company Profile"/><Text  text="Established in 1994, “Subhash Sarees”, is one of the most reputed organizations engaged in manufacturing, supplying, and exporting of wedding sarees, party wear sarees, Bollywood sarees, bridal sarees &amp; movie sarees as well as different types of fabrics like Silk, Georgette, Crepe, Brasso, Chiffon, and other fancy materials."/>
+                            </F:content>
+                        </F:SimpleForm> -->
+						<!-- <VBox id="id1V2erticalLayout" class="sapUiSmallMarginBeginEnd">
+                            <HBox id="idProject5ClientHBox" >
+                                <Label text="Client:"/><Text  text="Subhash sarees and beyond"/>
+                            </HBox>
+                            <HBox id="idProject5RollHBox" >
+                                <Label text="Roll:"/><Text  text="SAP UI5/FIORI Consultant."/>
+                            </HBox>
+                            <HBox id="idProject5ApplicationServerHBox" >
+                                <Label text="Application server:"/><Text  text="SAP S4 HANA Public Cloud"/>
+                            </HBox>
+                            <HBox id="idProject5ProjectTypeHBox" >
+                                <Label text="Project Type:"/><Text  text="End to End Implementation (ONSITE)"/>
+                            </HBox>
+                            <HBox id="idProject5CompanyProfileHBox" >
+                                <Label text="Company Profile:"/><Text  text="Established in 1994, “Subhash Sarees”, is one of the most reputed organizations engaged in manufacturing, supplying, and exporting of wedding sarees, party wear sarees, Bollywood sarees, bridal sarees &amp; movie sarees as well as different types of fabrics like Silk, Georgette, Crepe, Brasso, Chiffon, and other fancy materials."/>
+                            </HBox>
+                        </VBox> -->
+					</objPage:ObjectPageSubSection>
+					<objPage:ObjectPageSubSection id="Project4" title="Sudiva spinners pvt ltd" titleUppercase="false">
+						<Label text="Achieved goals"/>               
+					</objPage:ObjectPageSubSection>
+					<objPage:ObjectPageSubSection id="Project3" title="Ostwal group of industries" titleUppercase="false">
+						<Label text="Achieved goals"/>                      
+					</objPage:ObjectPageSubSection>
+					<objPage:ObjectPageSubSection id="Project2" title="Swaraj Suiting Limited" titleUppercase="false">
+						<Label text="Achieved goals"/>                      
+					</objPage:ObjectPageSubSection>
+					<objPage:ObjectPageSubSection id="Project1" title="Sagar manufacturers pvt ltd" titleUppercase="false">
+						<Label text="Achieved goals"/>                      
+					</objPage:ObjectPageSubSection>
+				</objPage:subSections>
+			</objPage:ObjectPageSection>
+		</objPage:sections>
+	</objPage:ObjectPageLayout>
+</mvc:View>

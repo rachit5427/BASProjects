@@ -1,0 +1,41 @@
+<mvc:View controllerName="zcustledgerprint.controller.FirstScreen"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m" xmlns:F="sap.ui.layout.form" xmlns:C="sap.ui.core" xmlns:l="sap.ui.layout">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <F:SimpleForm id="idFirstSimpleForm" layout="ResponsiveGridLayout" columnsL="2" columnsXL="2" columnsM="2" editable="true">
+                <F:content>
+                    <Label design="Bold" id="idCompanyCodeLabel" text="Company Code" />
+                    <Input id="idCompanyCodeInput" value="1000" />
+                    <Label design="Bold" id="idFiscalYearLabel" text="Fiscal Year" />
+                    <DatePicker valueFormat="yyyy" displayFormat="yyyy" id="idFiscalYear"/>
+                    <Label design="Bold" id="idCustomerCodeLabel" text="Customer Code" />
+                    <MultiInput showValueHelp="true" valueHelpRequest="onCustomerCodeValueHelpRequest" id="idCustomerCodeInput"></MultiInput>
+                    <Label design="Bold" id="idDateLabel" text="Date" />
+                    <DatePicker valueFormat="yyyy-MM-dd" displayFormat="dd-MM-yyyy" id="idFromDate"/>
+                    <DatePicker valueFormat="yyyy-MM-dd" displayFormat="dd-MM-yyyy" id="idToDate"/>
+                    <Label design="Bold" id="idProfitCenterLabel" text="Profit Center" />
+                    <MultiInput showValueHelp="true" valueHelpRequest="onProfitCenterValueHelpRequest" id="idProfitCenterInput"></MultiInput>
+                    <C:Title id="id1Title"/>
+                </F:content>
+            </F:SimpleForm>
+
+            <SelectDialog multiSelect="true" contentWidth="50%" contentHeight="50%" id="idCustomerCodeSelectDialog" noDataText="No Customer Code Found" title="Select Customer Code" 
+               search=".onCustomerCodeSelectDialogSearch" confirm=".onCustomerCodeSelectDialogConfirm" cancel=".onCustomerCodeSelectDialogConfirm" items="{path: '/CustomerF4'}">
+                <StandardListItem id="idCustomerCodeStandardListItem" title="{Customer}" info="{CustomerName}" type="Active" /> 
+            </SelectDialog>
+
+            <SelectDialog multiSelect="true" contentWidth="50%" contentHeight="50%" id="idProfitCenterSelectDialog" noDataText="No Profit Center Found" title="Select Profit Center" 
+               search=".onProfitCenterSelectDialogSearch" confirm=".onProfitCenterSelectDialogConfirm" cancel=".onProfitCenterSelectDialogConfirm" items="{path: '/ProfitCenterF4'}">
+                <StandardListItem id="idProfitCenterStandardListItem" title="{ProfitCenter}" info="{ProfitCenter_Text}" type="Active" /> 
+            </SelectDialog>
+        </content>
+        <footer>
+            <Bar id="idBar">
+                <contentRight>
+                    <Button id="idExecuteButton" text="Execute" type="Emphasized" press="onExecuteButtonPress" ></Button>
+                </contentRight>
+            </Bar>
+        </footer>
+    </Page>
+</mvc:View>

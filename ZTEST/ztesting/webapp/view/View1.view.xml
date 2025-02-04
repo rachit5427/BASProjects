@@ -1,0 +1,75 @@
+<mvc:View controllerName="ztesting.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" xmlns:F="sap.ui.layout.form" xmlns:C="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:Tab="sap.ui.table" 
+    xmlns="sap.m" xmlns:u="sap.ui.unified">
+    <Page id="page"  title="{i18n>title}">
+        <content>
+        <Button text="dialog" press="openChatDialog"></Button>
+            <Tab:Table rows="{oDataModel>/aTableData}" >
+                <Tab:columns>
+                    <Tab:Column >
+                        <Label text="Description"></Label>
+                        <Tab:template>
+                            <Input id="idDescriptionInput" value="{oDataModel>Description}" />
+                        </Tab:template>
+                    </Tab:Column>
+                    <Tab:Column >
+                        <Label text="Name"></Label>
+                        <Tab:template>
+                            <Input id="idNameInput" value="{oDataModel>Name}"  />
+                        </Tab:template>
+                    </Tab:Column>
+                    <Tab:Column >
+                        <Label text="......"></Label>
+                        <Tab:template>
+                            <ObjectStatus id="idSecondTablesCellsDeliveryNumbersObjectStatus" text="{oDataModel>DeliveryNumber}" active="true" state="Success" press="onCallDeliveryDocumentItem" />
+                            <!-- <Link text="{oDataModel>}" press="openDialog"  /> -->
+                        </Tab:template>
+                    </Tab:Column>
+                </Tab:columns>
+            </Tab:Table>
+
+            
+            <Dialog id="idSpreadsheetUploadDialog" contentWidth="100%" showHeader="false">
+                <OverflowToolbar id="idOverflowToolbar" class="sapUiLargeMarginBottom" >
+                    <Text class="SpreadsheetUploadTextClass" id="SpreadsheetUpload" text="Spreadsheet Upload"></Text>
+                    <ToolbarSpacer  id="ToolbarSpacer"/>
+                    <Button icon="sap-icon://decline" id="idCloseButton" press="onDialogCancelButtonPress" ></Button>
+                </OverflowToolbar>
+                <List id="chatList1" items="{oDataModel>/aMessage}">
+                    <CustomListItem>
+                        <HBox justifyContent="{= ${oDataModel>sender} === 'User' ? 'End' : 'Start'}">
+                            <Input editable="false" value="{oDataModel>message}" />
+                        </HBox>
+                    </CustomListItem>
+                </List>                    
+                <TextArea id="idTextArea" class="sapUiSmallMargin" width="85%"   ></TextArea>
+                <C:Icon src="sap-icon://save" press="onIconPress"  class="size4" color="#64E4CE" > 
+                    <C:layoutData>
+                        <!-- <FlexItemData growFactor="1" /> -->
+                    </C:layoutData>
+                </C:Icon>
+            </Dialog>
+
+
+            <Dialog id="chatDialog" title="Chat Box" class="sapUiContentPadding" resizable="true" draggable="true">
+                <content>
+                    <!-- Chat Messages List -->
+                    <List id="chatList" items="{chatModel>/messages}">
+                        <CustomListItem>
+                            <HBox justifyContent="{= ${chatModel>sender} === 'User' ? 'End' : 'Start'}">
+                                <Text text="{chatModel>message}" class="{= ${chatModel>sender} === 'User' ? 'userMessage' : 'receivedMessage'}" />
+                            </HBox>
+                        </CustomListItem>
+                    </List>
+                </content>
+                <content>
+                    <!-- Chat Input & Send Button -->
+                    <HBox fitContainer="true">
+                        <TextArea id="chatInput" placeholder="Type your message..." width="100%"/>
+                        <Button text="Send" press="onSendMessage"/>
+                    </HBox>
+                </content>
+            </Dialog>
+        </content>
+    </Page>
+</mvc:View>

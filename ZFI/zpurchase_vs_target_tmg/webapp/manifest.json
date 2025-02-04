@@ -1,0 +1,134 @@
+{
+    "_version": "1.65.0",
+    "sap.app": {
+        "id": "zpurchasevstargettmg",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:basic",
+            "version": "1.16.3",
+            "toolsId": "b0fe3201-9c09-44bd-b360-3f97e4db1c6c"
+        },
+        "crossNavigation": {
+            "inbounds": {
+                "ZPURCHASE_VS_TARGET_TMG-FI_TMG": {
+                    "semanticObject": "ZPURCHASE_VS_TARGET_TMG",
+                    "action": "FI_TMG",
+                    "title": "{{flpTitle}}",
+                    "subTitle": "{{flpSubtitle}}",
+                    "signature": {
+                        "parameters": {},
+                        "additionalParameters": "allowed"
+                    }
+                }
+            }
+        },
+        "dataSources": {
+            "ZPURCHASE_VS_TARGET_TMG": {
+                "uri": "/sap/opu/odata/sap/ZPURCHASE_VS_TARGET_TMG",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": true,
+        "dependencies": {
+            "minUI5Version": "1.132.1",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "zpurchasevstargettmg.i18n.i18n"
+                }
+            },
+            "": {
+                "preload": true,
+                "dataSource": "ZPURCHASE_VS_TARGET_TMG",
+                "settings": {
+                    "defaultBindingMode": "TwoWay",
+                    "defaultCountMode": "Inline",
+                    "refreshAfterChange": false,
+                    "metadataUrlParams": {
+                        "sap-value-list": "none"
+                    }
+                }
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "transition": "slide",
+                "type": "View",
+                "viewType": "XML",
+                "path": "zpurchasevstargettmg.view",
+                "async": true,
+                "viewPath": "zpurchasevstargettmg.view"
+            },
+            "routes": [
+                {
+                    "name": "RouteFirstScreen",
+                    "pattern": ":?query:",
+                    "target": [
+                        "TargetFirstScreen"
+                    ]
+                }
+            ],
+            "targets": {
+                "TargetFirstScreen": {
+                    "id": "FirstScreen",
+                    "name": "FirstScreen"
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "zpurchasevstargettmg.view.App",
+            "type": "XML",
+            "id": "App"
+        }
+    }
+}
